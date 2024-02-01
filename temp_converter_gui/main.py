@@ -16,12 +16,12 @@ result_text = tk.StringVar()
 result_text.set("Enter temperature in Celsius and click Convert.")
 
 entry = tk.Entry(root, width = 20, borderwidth = 5)
-entry.pack(padx = 10, pady = 10)  # Add padding
+entry.pack(padx = 10, pady = 10)  # padding
 
 button_submit = tk.Button(root, text = "Convert", command = convert_temp)
-button_submit.pack(padx = 10, pady = 10)  # Add padding
+button_submit.pack(padx = 10, pady = 10)  # Add padding so everything sits in the middle
 
 label_result = tk.Label(root, textvariable = result_text)
-label_result.pack(padx = 10, pady = 10)  # Add padding
+label_result.pack(padx = 10, pady = 10)  # padding 
 
 root.mainloop()
