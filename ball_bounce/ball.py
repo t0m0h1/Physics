@@ -45,13 +45,8 @@ def update(self, other_ball=None):
             # Update velocities
             self.velocity[0] -= dot_normal * collision_normal[0]
             self.velocity[1] -= dot_normal * collision_normal[1]
-
-            # Separate the balls to prevent them from sticking together
-            overlap = self.radius + other_ball.radius - distance
-            self.x += collision_normal[0] * overlap / 2
-            self.y += collision_normal[1] * overlap / 2
-            other_ball.x -= collision_normal[0] * overlap / 2
-            other_ball.y -= collision_normal[1] * overlap / 2
+            other_ball.velocity[0] += dot_normal * collision_normal[0]
+            other_ball.velocity[1] += dot_normal * collision_normal[1]
 
             # Ensure the new velocity magnitude does not exceed the maximum speed
             speed = math.sqrt(self.velocity[0]**2 + self.velocity[1]**2)
@@ -60,6 +55,13 @@ def update(self, other_ball=None):
                 scale_factor = self.max_speed / speed
                 self.velocity[0] *= scale_factor
                 self.velocity[1] *= scale_factor
+
+            speed = math.sqrt(other_ball.velocity[0]**2 + other_ball.velocity[1]**2)
+            if speed > other_ball.max_speed:
+                # Normalize the velocity vector and scale it to the maximum speed
+                scale_factor = other_ball.max_speed / speed
+                other_ball.velocity[0] *= scale_factor
+                other_ball.velocity[1] *= scale_factor
 
 def draw(self):
     pygame.draw.circle(self.screen, self.colour, (int(self.x), int(self.y)), self.radius)
