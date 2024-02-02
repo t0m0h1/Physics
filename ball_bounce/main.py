@@ -21,10 +21,10 @@ while True:
 
     screen.fill((255, 255, 255)) # Fill the screen with white
 
-    red_ball.update()
+    red_ball.update(blue_ball)
     red_ball.draw()
-    blue_ball.update()
+    blue_ball.update(red_ball)
     blue_ball.draw()
 
     pygame.display.flip()
-    clock.tick(60) # Limit the framerate to 60fps
+    clock.tick(120) # Limit the framerate to 60fps
