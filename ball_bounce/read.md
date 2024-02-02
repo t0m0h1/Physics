@@ -17,7 +17,7 @@ The Ball class represents a ball in the simulation. Each ball has the following 
 - velocity: A list of two elements representing the velocity of the ball in the x and y directions.
 
 - max_speed: The maximum speed of the ball.
-- 
+  
 
 The Ball class has two methods:
 
