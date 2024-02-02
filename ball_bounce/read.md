@@ -6,24 +6,24 @@ This Python program uses the Pygame library to simulate the bouncing of two ball
 
 The Ball class represents a ball in the simulation. Each ball has the following properties:
 
-screen: The Pygame surface where the ball is drawn.
+- screen: The Pygame surface where the ball is drawn.
 
-x and y: The current position of the ball.
+- x and y: The current position of the ball.
 
-radius: The radius of the ball.
+- radius: The radius of the ball.
 
-color: The color of the ball.
+- color: The color of the ball.
 
-velocity: A list of two elements representing the velocity of the ball in the x and y directions.
+- velocity: A list of two elements representing the velocity of the ball in the x and y directions.
 
-max_speed: The maximum speed of the ball.
+- max_speed: The maximum speed of the ball.
+- 
 
 The Ball class has two methods:
 
+- draw(): Draws the ball on the screen.
 
-draw(): Draws the ball on the screen.
-
-update(other_ball): Updates the position of the ball based on its velocity, checks for collisions with the edges of the screen and the other ball, and adjusts the velocity accordingly.
+- update(other_ball): Updates the position of the ball based on its velocity, checks for collisions with the edges of the screen and the other ball, and adjusts the velocity accordingly.
 
 
 
