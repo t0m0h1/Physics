@@ -2,13 +2,14 @@ import pygame
 import math
 
 class Ball:
-    def __init__(self, screen, x, y, radius, colour, velocity):
+    def __init__(self, screen, x, y, radius, colour, velocity, max_speed):
         self.screen = screen
         self.x = x
         self.y = y
         self.radius = radius
         self.colour = colour
         self.velocity = velocity
+        self.max_speed = max_speed
 
     def update(self, other_ball=None):
         self.x += self.velocity[0]
@@ -48,6 +49,18 @@ class Ball:
                 ]
                 self.velocity[0] += collision_tangent[0] * dot_tangent
                 self.velocity[1] += collision_tangent[1] * dot_tangent
+
+                # Limit the velocity magnitude so that the balls don't bounce like crazy
+                speed = math.sqrt(self.velocity[0]**2 + self.velocity[1]**2)
+                if speed > self.max_speed:
+                    # Normalize the velocity vector and scale it to the maximum speed
+                    scale_factor = self.max_speed / speed
+                    self.velocity[0] *= scale_factor
+                    self.velocity[1] *= scale_factor
+
+
+
+
 
     def draw(self):
         pygame.draw.circle(self.screen, self.colour, (int(self.x), int(self.y)), self.radius)
