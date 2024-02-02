@@ -1,20 +1,32 @@
 **Ball Bounce Simulation**
+
 This Python program uses the Pygame library to simulate the bouncing of two balls in a 2D space. The balls can collide with each other and the edges of the screen.
 
 **Ball Class**
+
 The Ball class represents a ball in the simulation. Each ball has the following properties:
 
 screen: The Pygame surface where the ball is drawn.
+
 x and y: The current position of the ball.
+
 radius: The radius of the ball.
+
 color: The color of the ball.
+
 velocity: A list of two elements representing the velocity of the ball in the x and y directions.
+
 max_speed: The maximum speed of the ball.
+
 The Ball class has two methods:
 
+
 draw(): Draws the ball on the screen.
+
 update(other_ball): Updates the position of the ball based on its velocity, checks for collisions with the edges of the screen and the other ball, and adjusts the velocity accordingly.
-Collision Detection and Response
+
+**Collision Detection and Response**
+
 The update method checks for collisions with the edges of the screen and reverses the direction of the velocity if a collision is detected.
 
 The method also checks for collisions with another ball. If a collision is detected, it calculates the collision normal and tangent, the relative velocity, and the dot products of the relative velocity with the collision normal and tangent. It then updates the velocities of the two balls based on these calculations.
