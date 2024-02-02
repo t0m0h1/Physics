@@ -37,7 +37,7 @@ The method also ensures that the magnitude of the new velocity does not exceed t
 
 **Pythagorean Theorem**
 
-The Pythagorean theorem is used in the update method to calculate the distance between the centers of the two balls. This is done with the following line of code:
+The Pythagorean theorem is used in the update method to calculate the distance between the centers of the two balls. 
 
 The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This can be written as a² + b² = c².
 
