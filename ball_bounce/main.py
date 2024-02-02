@@ -9,8 +9,8 @@ pygame.display.set_caption("Ball Bounce Simulation")
 clock = pygame.time.Clock()
 
 # Instatiate our ball
-red_ball = Ball(screen, 100, 100, 20, (255, 0, 0), [2, 2])
-blue_ball = Ball(screen, 200, 200, 20, (0, 0, 255), [-2, -2])
+red_ball = Ball(screen, 100, 100, 20, (255, 0, 0), [2, 2], 5)
+blue_ball = Ball(screen, 200, 200, 20, (0, 0, 255), [-2, -2], 5)
 
 # Main game loop
 while True:
