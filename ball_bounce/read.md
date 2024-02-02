@@ -25,6 +25,8 @@ draw(): Draws the ball on the screen.
 
 update(other_ball): Updates the position of the ball based on its velocity, checks for collisions with the edges of the screen and the other ball, and adjusts the velocity accordingly.
 
+
+
 **Collision Detection and Response**
 
 The update method checks for collisions with the edges of the screen and reverses the direction of the velocity if a collision is detected.
@@ -41,4 +43,4 @@ The Pythagorean theorem states that in a right triangle, the square of the lengt
 In this case, the lengths of the two sides of the triangle are (self.x - other_ball.x) and (self.y - other_ball.y), which represent the differences in the x and y coordinates of the two balls. The length of the hypotenuse is the distance between the centers of the two balls.
 
 **Run the simulation**
-run main.py
+- run main.py
